@@ -105,7 +105,7 @@ public class FuncionarioController {
         model.setViewName("funcionario/update");
         return model;
     }
-    //FUNCIONA
+    //FUNCIONA update
     @RequestMapping(value="update/{jj}", method = RequestMethod.POST)
     public String update(@PathVariable("jj") int jj, 
                         //@RequestParam("id") int id,
