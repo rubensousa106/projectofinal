@@ -71,11 +71,11 @@ public class FuncionarioController {
         return "redirect:/funcionario/index";
     }
 
-    @RequestMapping(value = "deatails/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "details/{id}", method = RequestMethod.GET)
     public ModelAndView details(@PathVariable("id") int id) {
         ModelAndView model = new ModelAndView();
         model.addObject("funcionario", db.findFuncionario(id));
-        model.setViewName("funcionario/update");
+        model.setViewName("funcionario/details");
         return model;
     }
 
@@ -90,7 +90,7 @@ public class FuncionarioController {
         try {
             db.edit(new Funcionario(jj, tipo, nome, morada, password));
         } catch (Exception e) {
-            return "redirect:/funcionario/update/" + jj;
+            return "redirect:/funcionario/details/" + jj;
         }
 
         return "redirect:/index";
@@ -105,7 +105,7 @@ public class FuncionarioController {
         model.setViewName("funcionario/update");
         return model;
     }
-    //FUNCIONA update
+    //FUNCIONA
     @RequestMapping(value="update/{jj}", method = RequestMethod.POST)
     public String update(@PathVariable("jj") int jj, 
                         //@RequestParam("id") int id,
