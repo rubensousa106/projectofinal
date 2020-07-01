@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--WHERE TIPO =1 -->
+
+<html>
+    <head>
+        <title>Criar Novo Funcionario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Criar Funcionario </div>
+        
+        <form action="/funcionario/create" method="post">
+            <table>
+                
+                
+                <tr>
+                    <td>Nome</td>
+                    <td><input type="text" name="nome" ></td>
+                </tr>
+                 <tr>
+                    <td>Tipo</td>
+                    <td><input type="number" name="tipo" min="0" max="1" ></td>
+                </tr>
+                <tr>
+                    <td>Morada</td>
+                    <td><input type="text" name="morada" ></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="text" name="password" ></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Enviar" /></td>
+                    <td><input type="reset" /></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

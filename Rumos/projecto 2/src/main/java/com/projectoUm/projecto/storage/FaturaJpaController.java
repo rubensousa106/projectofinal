@@ -18,15 +18,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author ruben
  */
+@Service
 public class FaturaJpaController implements Serializable {
 
-    public FaturaJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+   public FaturaJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("com.projectoUm_projecto_jar_0.0.1-SNAPSHOTPU");
     }
     private EntityManagerFactory emf = null;
 

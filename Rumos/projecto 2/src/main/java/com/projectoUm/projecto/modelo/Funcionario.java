@@ -63,8 +63,15 @@ public class Funcionario implements Serializable {
         this.id = id;
     }
 
-    public Funcionario(Integer id, int tipo, String nome, String morada, String password) {
+    public Funcionario(int id, int tipo, String nome, String morada, String password) {
         this.id = id;
+        this.tipo = tipo;
+        this.nome = nome;
+        this.morada = morada;
+        this.password = password;
+    }
+    
+     public Funcionario(int tipo, String nome, String morada, String password) {
         this.tipo = tipo;
         this.nome = nome;
         this.morada = morada;
@@ -75,7 +82,7 @@ public class Funcionario implements Serializable {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

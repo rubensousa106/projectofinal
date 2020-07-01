@@ -16,15 +16,18 @@ import com.projectoUm.projecto.storage.exceptions.NonexistentEntityException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author ruben
  */
+@Service
 public class SubCategoriaJpaController implements Serializable {
 
-    public SubCategoriaJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+    public SubCategoriaJpaController() {
+        this.emf = Persistence.createEntityManagerFactory("com.projectoUm_projecto_jar_0.0.1-SNAPSHOTPU");
     }
     private EntityManagerFactory emf = null;
 

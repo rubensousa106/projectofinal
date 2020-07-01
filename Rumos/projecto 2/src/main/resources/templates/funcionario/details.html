@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Detalhes Funcionario</div>
+        
+        <form th:action="@{'/funcionario/details/'+${funcionario.id}}" method="post">
+            <table>
+                <tr>
+                    <td>Tipo</td>
+                    <td><input type="number" name="tipo" min="0" max="1" th:value="${funcionario.tipo}" disabled=true /></td>
+                </tr>
+                <tr>
+                    <td>Nome</td>
+                    <td><input type="text" name="nome" th:value="${funcionario.nome}" disabled=true /></td>
+                </tr>
+                <tr>
+                    <td>Morada</td>
+                    <td><input type="text" name="morada" th:value="${funcionario.morada}" disabled=true /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="text" name="Password" th:value="${funcionario.password}" disabled=true/></td>
+                </tr>    
+            </table>
+        </form>
+        
+        <p><a href="/funcionario/index">Voltar</a></p> 
+    </body>
+</html>

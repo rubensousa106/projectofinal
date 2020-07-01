@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina de Listar Funcionarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Lista Funcionarios</div>
+        
+        <table>
+            
+            <tr>
+                <td>ID</td>
+                <td>Tipo</td>
+                <td>Nome</td>
+                <td>Morada</td>
+                <td>Password</td>
+            </tr>
+            
+            
+             <tr th:each="s : ${funcionario}" th:id="${s.id}">
+                <td th:text="${s.id}" />
+                <td th:text="${s.tipo}" />
+                <td th:text="${s.nome}" />
+                <td th:text="${s.morada}" />
+                <td th:text="${s.password}" />
+                
+                <td><a th:href="@{'/funcionario/update/'  + ${s.id}}">Editar</a> </td>
+                <td><a th:href="@{'/funcionario/details/' + ${s.id}}">Detalhes</a> </td>
+                <td><a th:href="@{'/funcionario/delete/'  + ${s.id}}"onclick="return valida()">Apagar </a> </td>
+                
+                </tr>
+        </table>
+        
+        
+         <script>
+            
+            function valida()
+            {
+                var resposta = confirm("Deseja apagar");
+                if (resposta==true) {
+                        return true;
+                }
+                
+                return false;   
+            }
+        </script>
+    </body>
+</html>
