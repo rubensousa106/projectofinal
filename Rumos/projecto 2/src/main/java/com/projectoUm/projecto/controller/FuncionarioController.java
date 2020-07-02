@@ -50,6 +50,7 @@ public class FuncionarioController {
     public ModelAndView create() {
         ModelAndView model2 = new ModelAndView();
         model2.setViewName("funcionario/create");
+        
         return model2;
     }
 
@@ -61,9 +62,11 @@ public class FuncionarioController {
             @RequestParam("nome") String nome,
             @RequestParam("morada") String morada,
             @RequestParam("password") String password) {
+        
 
         try {
             db.create(new Funcionario(tipo, nome, morada, password));
+            
         } catch (Exception e) {
             System.out.print("ERRO!");
             return "redirect:/funcionario/erro";
