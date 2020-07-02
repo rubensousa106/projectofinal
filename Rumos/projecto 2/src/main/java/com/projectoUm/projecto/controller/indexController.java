@@ -30,7 +30,7 @@ public class indexController {
     @Autowired
     FuncionarioJpaController db;
 
-    
+       //funciona
     @RequestMapping(value = "/index")
     public ModelAndView index() {
         ModelAndView model = new ModelAndView();
